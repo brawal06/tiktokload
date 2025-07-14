@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TikTok Downloader</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container py-5">
+        <h2 class="text-center mb-4">🎥 TikTok Video Downloader</h2>
+
+        <form method="POST">
+            <div class="input-group mb-3">
+                <input type="url" class="form-control" name="url" placeholder="Paste TikTok video URL here..." required>
+                <button class="btn btn-primary" type="submit">Download</button>
+            </div>
+        </form>
+
+        {% if error %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        {% if video_url %}
+            <div class="alert alert-success">✅ Video downloaded!</div>
+            <a class="btn btn-success" href="{{ video_url }}" download>Click to Download</a>
+        {% endif %}
+    </div>
+</body>
+</html>
+

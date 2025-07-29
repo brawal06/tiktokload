@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 Flask==2.0.1
 yt-dlp==2025.7.24  # Replace with actual latest version
 gunicorn==20.1.0
+=======
+yt-dlp==2025.7.21
+>>>>>>> 6b410c2 (Fix pip install error and update yt-dlp)

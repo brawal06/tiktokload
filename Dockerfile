@@ -1,8 +1,17 @@
 FROM python:3.8-slim
 
+<<<<<<< HEAD
 # Install ffmpeg and dependencies as root
 USER root
 RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+=======
+# Install ffmpeg and system dependencies as root
+USER root
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+>>>>>>> 6b410c2 (Fix pip install error and update yt-dlp)
 
 # Set working directory
 WORKDIR /app

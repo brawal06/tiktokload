@@ -24,4 +24,5 @@ RUN mkdir -p /app/static/videos && chown -R 1000:1000 /app/static/videos
 USER 1000
 
 # Run the app with gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
+#CMD ["gunicorn", "--bind", "0.0.0.0:8080", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--log-level", "debug", "--timeout", "120", "app:app"]

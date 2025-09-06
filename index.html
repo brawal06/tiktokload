@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free TikTok Video Downloader</title>
+    <meta name="description" content="Download TikTok videos in HD without watermarks. Paste the video URL and save in MP4 format for free.">
+    <meta name="keywords" content="TikTok downloader, download TikTok video, TikTok without watermark, free TikTok download, TikTok down">
+    <meta name="robots" content="index, follow">
+    <link rel="sitemap" type="application/xml" href="/static/sitemap.xml">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        input[type="text"] { width: 80%; max-width: 500px; padding: 10px; margin: 10px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .error { color: red; }
+        video { max-width: 100%; margin-top: 20px; }
+        .disclaimer { font-size: 0.9em; color: #555; }
+        .loader { display: none; border: 8px solid #f3f3f3; border-top: 8px solid #007bff; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+    <script>
+        function showLoader() {
+            document.getElementById('loader').style.display = 'block';
+            document.getElementById('downloadBtn').disabled = true;
+        }
+    </script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_PUBLISHER_ID"
+            crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!-- Ad Unit Above Form -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3157275717562851"
+         data-ad-slot="1760707529"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <h1>Free TikTok Video Downloader</h1>
+    <!-- Existing form and content -->
+    <!-- Ad Unit Below Form -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-3157275717562851"
+         data-ad-slot="1760707529"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <!-- Rest of your HTML -->
+
+    <h1>Free TikTok Video Downloader</h1>
+    <p>Paste a TikTok video URL to download it in high quality without watermarks.</p>
+    <form method="POST" action="/" onsubmit="showLoader()">
+        <input type="text" name="url" placeholder="Enter TikTok video URL" required>
+        <button type="submit" id="downloadBtn">Download</button>
+    </form>
+    <div id="loader" class="loader"></div>
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    {% if video_url %}
+        <p>Download your video: <a href="{{ video_url }}" download>Click here</a></p>
+        <video controls src="{{ video_url }}"></video>
+    {% endif %}
+    <p class="disclaimer">Disclaimer: Use this tool responsibly. Only download videos with the creator’s permission and respect TikTok’s terms of service.</p>
+</body>
+<footer>
+    <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Use</a>
+</footer>
+
+</html>
